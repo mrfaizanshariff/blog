@@ -7,7 +7,7 @@ const Postcard = ({ post }) => {
   console.log(post)
   return (
     <div className="mb-8 rounded-lg bg-white p-0 pb-12 shadow-lg lg:p-8">
-      <div className="relative mb-6 overflow-hidden pb-80 shadow-md">
+      <div className="relative mb-3 overflow-hidden pb-80 shadow-md">
         <img
           src={post.featuredImage.url}
           alt={post.title}
@@ -15,13 +15,13 @@ const Postcard = ({ post }) => {
         />
       </div>
       <h1
-        className="cursor:pointer mb-8 text-center text-3xl font-semibold 
+        className="cursor:pointer mb-4 text-center text-3xl font-semibold 
         transition duration-300 hover:text-pink-600"
       >
         <Link href={`/post/${post.slug}`}>{post.title}</Link>
       </h1>
       <div className="mb-8 block w-full items-center justify-around rounded-lg bg-gradient-to-r from-green-400 to-blue-500 text-center hover:from-pink-500 hover:to-yellow-500 lg:flex">
-        <div className="mb-4 mr-8 flex w-full items-center justify-center lg:mb-0 lg:w-auto">
+        <div className=" mr-8 flex w-full items-center justify-center lg:mb-0 lg:w-auto">
           <img
             className="rounded-full align-middle"
             src={post.author.photo.url}
@@ -29,7 +29,7 @@ const Postcard = ({ post }) => {
             height="30px"
             width="30px"
           />
-          <p className="inline p-10 align-middle text-gray-700">
+          <p className="inline p-4 align-middle text-gray-700">
             {post.author.name}
           </p>
         </div>
@@ -51,9 +51,19 @@ const Postcard = ({ post }) => {
           <span>{moment(post.createdAt).format('MMM-DD-YYYY')}</span>
         </div>
       </div>
-      <p className="lg:px-=10 mb-8 px-4 text-lg font-normal text-gray-700">
+      <p className="lg:px-=10 mb-8 px-4 text-center text-lg font-normal text-gray-700">
         {post.excerpt}
       </p>
+      <div className="cursor:pointer text-center ">
+        <Link href={`/post/${post.slug}`}>
+          <span
+            className=" mb-8 cursor-pointer rounded-lg bg-gradient-to-r from-green-400 to-blue-500 p-2 text-center text-3xl 
+          font-semibold  hover:from-pink-500 hover:to-yellow-500 hover:text-white "
+          >
+            Continue Reading..
+          </span>
+        </Link>
+      </div>
     </div>
   )
 }

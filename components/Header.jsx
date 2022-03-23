@@ -2,7 +2,10 @@ import React, { useContext } from 'react'
 import Link from 'next/link'
 
 const categories = [
+  { name: 'JavaScript', slug: 'js' },
   { name: 'React', slug: 'react' },
+  { name: 'Angular', slug: 'angular' },
+  { name: 'Web 3.0', slug: 'web3' },
   { name: 'Web Dev', slug: 'web-dev' },
 ]
 
@@ -13,7 +16,7 @@ const Header = () => {
         <div className="md:float-left">
           <Link href="/">
             <span className="cursor-pointer text-4xl font-bold text-white">
-              Graph CMS
+              Code Factory
             </span>
           </Link>
         </div>
